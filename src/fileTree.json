@@ -1,0 +1,40 @@
+{
+  "name": "Home",
+  "type": "folder",
+  "path": "/Home",
+  "children": {
+    "about": {
+      "name": "about",
+      "type": "file",
+      "path": "/Home/about",
+      "data": "This website serves as my curriculum vitae.\nI've coded it by hand with HTML, CSS, and standard JavaScript as a fun side project.\nSource code : <a href=\"https://github.com/yuukiflow/TerminalCurriculum\">https://github.com/yuukiflow/TerminalCurriculum</a>\n\n"
+    },
+    "experiences": {
+      "name": "experiences",
+      "type": "folder",
+      "path": "/Home/experiences",
+      "children": {},
+      "childrenNames": []
+    },
+    "projects": {
+      "name": "projects",
+      "type": "folder",
+      "path": "/Home/projects",
+      "children": {},
+      "childrenNames": []
+    },
+    "studies": {
+      "name": "studies",
+      "type": "folder",
+      "path": "/Home/studies",
+      "children": {},
+      "childrenNames": []
+    }
+  },
+  "childrenNames": [
+    "about",
+    "experiences",
+    "projects",
+    "studies"
+  ]
+}

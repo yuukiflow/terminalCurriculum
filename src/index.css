@@ -1,0 +1,87 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #222;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.terminal-window {
+  width: 80%;
+  max-width: 95wh;
+  margin: 50px auto;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: hsla(0,0%,100%,.15);
+}
+
+.terminal-header {
+  background-color: #0f0f0f;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.terminal-header span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.green {
+  color: #00ff00;
+}
+.folder {
+  color: #d3a5fd;
+}
+.close-btn {
+  background-color: #ff3b47;
+}
+
+a, a:hover, a:focus, a:active, a:visited {
+    color: #fff;
+}
+
+.minimize-btn {
+  background-color: #ffc106;
+}
+
+.maximize-btn {
+  background-color: #00e676;
+}
+
+.terminal-body {
+  padding: 10px;
+}
+
+.terminal-output {
+  margin-bottom: 10px;
+}
+
+.terminal-input {
+  display: flex;
+}
+
+.prompt {
+  color: #00ff00;
+  margin-right: 5px;
+}
+
+input[type="text"] {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
