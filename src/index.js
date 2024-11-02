@@ -14,17 +14,17 @@ let activeDirectory
 let commandHistory = [];
 let commandIndex = 0;
 
-fetch('/fileTree.json', {headers: {"Accept" : "application/json"}})
-  .then(response => response.json())
-  .then(fileTree => {
-      console.log('File tree data:', fileTree);
-      // Use the file tree data as a JavaScript object
-      // For example, you can access individual properties like fileTree.name, fileTree.children, etcfileTreebuffer
-      fileTreebuffer = fileTree;
-      activeDirectory = fileTree;
-      terminalPath.innerHTML = currentPath;
-  })
-  .catch(error => console.error('Error fetching file tree:', error));
+fetch('/fileTree.json', { headers: { "Accept": "application/json" } })
+    .then(response => response.json())
+    .then(fileTree => {
+        console.log('File tree data:', fileTree);
+        // Use the file tree data as a JavaScript object
+        // For example, you can access individual properties like fileTree.name, fileTree.children, etcfileTreebuffer
+        fileTreebuffer = fileTree;
+        activeDirectory = fileTree;
+        terminalPath.innerHTML = currentPath;
+    })
+    .catch(error => console.error('Error fetching file tree:', error));
 
 
 terminalWindow.addEventListener('click', () => {
@@ -37,20 +37,20 @@ stdin.addEventListener('keydown', (event) => {
         parseCommand(command);
         commandHistory.push(command);
         commandIndex = commandHistory.length;
-    }else if (event.key === 'Tab') {
+    } else if (event.key === 'Tab') {
         event.preventDefault();
         let command = stdin.value.split(' ')[0];
         tabComplete(command);
-    }else if (event.key === 'ArrowUp') {
+    } else if (event.key === 'ArrowUp') {
         if (commandIndex > 0) {
             commandIndex--;
             stdin.value = commandHistory[commandIndex];
         }
-    }else if (event.key === 'ArrowDown') {
+    } else if (event.key === 'ArrowDown') {
         if (commandIndex < commandHistory.length - 1) {
             commandIndex++;
             stdin.value = commandHistory[commandIndex];
-        }else {
+        } else {
             commandIndex = commandHistory.length;
             stdin.value = '';
         }
@@ -75,7 +75,7 @@ function parseCommand(commands) {
         case 'cat':
             if (args[0]) {
                 cat(args[0]);
-            }else {
+            } else {
                 writeToTerminal(commands, 'no file specified');
             }
             break;
@@ -85,8 +85,8 @@ function parseCommand(commands) {
 
         case 'cd':
             if (args[0]) {
-                    cd(args[0]);
-                    break;
+                cd(args[0]);
+                break;
             }
             else {
                 writeToTerminal(commands, "");
@@ -111,6 +111,7 @@ function clearInput() {
 
 function writeToTerminal(command, s) {
     stdout.innerHTML += `<p>${currentPath}<span class="green">${prompt.innerHTML}</span> ${command}</p>` + `<p>${s}</p>`;
+    scrollDown();
 }
 
 function cd(path) {
@@ -120,37 +121,44 @@ function cd(path) {
             return;
         }
 
-
         writeToTerminal(`cd ${path}`, '');
         currentPath = currentPath.split('/').slice(0, -1).join('/');
-        console.log(activeDirectory.path);
-        activeDirectory = fileTreebuffer;
+        activeDirectory = navigateFileTree(currentPath);
         terminalPath.innerHTML = currentPath;
         return;
 
-    }else if (path === '/') {
+    } else if (path === '/') {
         writeToTerminal(`cd ${path}`, '');
         activeDirectory = fileTreebuffer;
         currentPath = activeDirectory.path;
         terminalPath.innerHTML = currentPath;
         return;
-    }else if (activeDirectory.children[path] && activeDirectory.children[path].type === 'folder') {
-        activeDirectory = activeDirectory.children[path];
     } else {
-        writeToTerminal(`cd ${path}`, 'no such directory');
+        let fullPath = activeDirectory.path + '/' + path;
+        let checkNode = navigateFileTree(fullPath);
+        if (!checkNode) {
+            writeToTerminal(`cd ${path}`, 'no such directory');
+            return;
+        }
+        else if (checkNode.type !== 'folder') {
+            writeToTerminal(`cd ${path}`, 'no such directory');
+            return;
+        }
+        activeDirectory = checkNode;
+        writeToTerminal(`cd ${path}`, '');
+        currentPath = activeDirectory.path;
+        terminalPath.innerHTML = currentPath;
         return;
     }
-    writeToTerminal(`cd ${path}`, '');
-    currentPath = activeDirectory.path;
-    terminalPath.innerHTML = currentPath;
 }
 
-function cat(file) {
-if (activeDirectory.children[file] && activeDirectory.children[file].type === 'file') {
-    writeToTerminal(`cat ${file}`, activeDirectory.children[file].data);
-}else {
-    writeToTerminal(`cat ${file}`, 'no such file');
-}
+function cat(path) {
+    let file = navigateFileTree(currentPath + '/' + path);
+    if (file && file.type === 'file') {
+        writeToTerminal(`cat ${path}`, file.data);
+    } else {
+        writeToTerminal(`cat ${path}`, 'no such file');
+    }
 }
 
 function ls() {
@@ -159,7 +167,7 @@ function ls() {
     for (let child in children) {
         if (activeDirectory.children[child].type === 'folder') {
             childrenString += `<span class="folder">${child}/</span> `
-        }else {
+        } else {
             childrenString += `${child} `;
         }
     }
@@ -170,11 +178,57 @@ function tabComplete(command) {
     let children = activeDirectory.children;
     let childrenString = '';
     let partialInput = stdin.value.split(' ')[1];
-    for (let child in children) {
-        if (child.startsWith(partialInput)) {
-            stdin.value = command + ' ' + child
+    if (partialInput[partialInput.length - 1] === '/') {
+        let searchNode = navigateFileTree(currentPath + '/' + partialInput);
+        console.log(searchNode);
+        if (searchNode) {
+            console.log("found search node");
+            for (let child in searchNode.children) {
+                console.log(child);
 
+                if (searchNode.children[child].type === 'folder') {
+                    childrenString += `${child}/`
+                } else {
+                    childrenString += `${child}`;
+                }
+                console.log(childrenString);
+            }
+            stdin.value = command + ' ' + partialInput + childrenString
         }
+    } else if (partialInput !== '') {
+        for (let child in children) {
+            if (child.startsWith(partialInput)) {
+                if (activeDirectory.children[child].type === 'folder') {
+                    stdin.value = command + ' ' + child + '/'
+                } else {
+                    stdin.value = command + ' ' + child
+                }
+
+            }
+        }
+
+    } else {
+        return;
     }
 }
 
+function scrollDown() {
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+}
+
+function navigateFileTree(path) {
+    console.log("navigate", path);
+    const pathParts = path.split('/').filter(part => part !== ''); // Split the path and remove empty parts
+    let currentNode = fileTreebuffer;
+
+    for (const part of pathParts) {
+        if (part === "Home") {
+            continue
+        }
+        else if (!currentNode.children[part]) {
+            return null; // Path does not exist
+        }
+        currentNode = currentNode.children[part];
+    }
+    return currentNode;
+}

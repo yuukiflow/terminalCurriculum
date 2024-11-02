@@ -14,21 +14,44 @@
       "type": "folder",
       "path": "/Home/experiences",
       "children": {},
-      "childrenNames": []
+      "childrenNames": [
+        ""
+      ]
     },
     "projects": {
       "name": "projects",
       "type": "folder",
       "path": "/Home/projects",
-      "children": {},
-      "childrenNames": []
+      "children": {
+        "Alt": {
+          "name": "Alt",
+          "type": "folder",
+          "path": "/Home/projects/Alt",
+          "children": {
+            "EventManager": {
+              "name": "EventManager",
+              "type": "file",
+              "path": "/Home/projects/Alt/EventManager",
+              "data": "I built an Api for managing events.\n"
+            }
+          },
+          "childrenNames": [
+            "EventManager"
+          ]
+        }
+      },
+      "childrenNames": [
+        "Alt"
+      ]
     },
     "studies": {
       "name": "studies",
       "type": "folder",
       "path": "/Home/studies",
       "children": {},
-      "childrenNames": []
+      "childrenNames": [
+        ""
+      ]
     }
   },
   "childrenNames": [

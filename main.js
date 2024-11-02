@@ -28,13 +28,18 @@ function buildFileTree(directory, currentPath = '/Home') {
     };
 
     const files = fs.readdirSync(directory);
+    if (files.length === 0) {
+        node.childrenNames.push(""); // Indicate that the folder is empty
+        return node;
+    }
+
     files.forEach(file => {
         const filePath = path.join(directory, file);
         const fileStats = fs.statSync(filePath);
         if (fileStats.isDirectory()) {
             const childPath = path.join(currentPath, file); // Update current path for directories
             const childNode = buildFileTree(filePath, childPath);
-            node.children[file] = childNode;
+            node.children[file] = childNode; // Include subfolder node directly
             node.childrenNames.push(file);
         } else {
             const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -50,6 +55,7 @@ function buildFileTree(directory, currentPath = '/Home') {
 
     return node;
 }
+
 
 const fileTree = buildFileTree('./src/Home');
 fs.writeFileSync(fileTreePath, JSON.stringify(fileTree, null, 2));

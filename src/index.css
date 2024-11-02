@@ -13,7 +13,8 @@ body {
   border: 2px solid #000000;
   border-radius: 10px;
   overflow: hidden;
-  background-color: hsla(0,0%,100%,.15);
+  background-color: hsla(0, 0%, 100%, .15);
+  max-height: 90vh;
 }
 
 .terminal-header {
@@ -32,18 +33,25 @@ body {
   border-radius: 50%;
   margin-right: 5px;
 }
+
 .green {
   color: #00ff00;
 }
+
 .folder {
   color: #d3a5fd;
 }
+
 .close-btn {
   background-color: #ff3b47;
 }
 
-a, a:hover, a:focus, a:active, a:visited {
-    color: #fff;
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: #fff;
 }
 
 .minimize-btn {
@@ -56,6 +64,8 @@ a, a:hover, a:focus, a:active, a:visited {
 
 .terminal-body {
   padding: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .terminal-output {
@@ -84,4 +94,3 @@ input[type="text"] {
 input[type="text"]:focus {
   outline: none;
 }
-
