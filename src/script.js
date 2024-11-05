@@ -20,8 +20,8 @@ stdin.addEventListener('keydown', (event) => {
 });
 
 function parseCommand(commands) {
-    command = commands.split(' ')[0];
-    args = commands.split(' ').slice(1);
+    let command = commands.split(' ')[0];
+    let args = commands.split(' ').slice(1);
     console.log(commands);
     switch (command) {
         case 'clear':

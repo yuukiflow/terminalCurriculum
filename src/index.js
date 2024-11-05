@@ -18,8 +18,6 @@ fetch('/fileTree.json', { headers: { "Accept": "application/json" } })
     .then(response => response.json())
     .then(fileTree => {
         console.log('File tree data:', fileTree);
-        // Use the file tree data as a JavaScript object
-        // For example, you can access individual properties like fileTree.name, fileTree.children, etcfileTreebuffer
         fileTreebuffer = fileTree;
         activeDirectory = fileTree;
         terminalPath.innerHTML = currentPath;
@@ -30,6 +28,17 @@ fetch('/fileTree.json', { headers: { "Accept": "application/json" } })
 terminalWindow.addEventListener('click', () => {
     stdin.focus();
 })
+
+terminalWindow.addEventListener('keydown', (event) => {
+    if (event.key === 'c' && event.ctrlKey) {
+        let gui = document.querySelector('.gui');
+        let stdin = document.querySelector('.terminal-input');
+        stdin.style.opacity = 100;
+        gui.style.display = 'none';
+    }
+
+})
+
 stdin.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         let command = stdin.value;
@@ -54,14 +63,21 @@ stdin.addEventListener('keydown', (event) => {
             commandIndex = commandHistory.length;
             stdin.value = '';
         }
+    } else if (event.key === 'c' && event.ctrlKey) {
+        let gui = document.querySelector('.gui');
+        let stdin = document.querySelector('#terminal-input');
+        let path = document.querySelector('.path');
+        path.display = 'block';
+        gui.style.display = 'none';
     }
 });
 
 
 function parseCommand(commands) {
-    command = commands.split(' ')[0];
-    args = commands.split(' ').slice(1);
+    let command = commands.split(' ')[0];
+    let args = commands.split(' ').slice(1);
     console.log(commands);
+
     switch (command) {
         case 'clear':
             stdout.innerHTML = '';
@@ -96,10 +112,18 @@ function parseCommand(commands) {
             }
             terminalPath.innerHTML = currentPath;
             break;
+        case 'gui':
+            let gui = document.querySelector('.gui'); // Use a general `.gui` selector
+            let stdin = document.querySelector('.terminal-input');
+            writeToTerminal(commands, "Executing " + command + "..." + "press CTRL+C to stop.");
+            stdin.style.opacity = 0;
+            gui.style.display = 'block'; // Ensure .gui is visible
+
+            break;
 
 
         default:
-            writeToTerminal(` Command not found: ${commands}`, '');
+            writeToTerminal(commands, 'Command not found : ' + command);
             break;
     }
     clearInput();
@@ -167,6 +191,8 @@ function ls() {
     for (let child in children) {
         if (activeDirectory.children[child].type === 'folder') {
             childrenString += `<span class="folder">${child}/</span> `
+        } else if (activeDirectory.children[child].executable === true) {
+            childrenString += `<span class="executable">${child}</span> `
         } else {
             childrenString += `${child} `;
         }
@@ -217,6 +243,7 @@ function scrollDown() {
 }
 
 function navigateFileTree(path) {
+
     console.log("navigate", path);
     const pathParts = path.split('/').filter(part => part !== ''); // Split the path and remove empty parts
     let currentNode = fileTreebuffer;

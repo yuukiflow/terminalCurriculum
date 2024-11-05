@@ -3,20 +3,45 @@
   "type": "folder",
   "path": "/Home",
   "children": {
+    "Curriculum": {
+      "name": "Curriculum",
+      "type": "folder",
+      "path": "/Home/Curriculum",
+      "children": {
+        "Experiences": {
+          "name": "Experiences",
+          "type": "file",
+          "path": "/Home/Curriculum/Experiences",
+          "executable": false,
+          "data": "<h4>Mars 2024 - Présent: Développeur Freelance</h4>\n<h5>Conception et développement :</h5>\n<ul>\n<li>Un modèle de langage basé sur llama-3.</li>\n<li>Une API permettant d'exécuter des requêtes LLM.</li>\n<li>Déploiement du modèle sur HuggingFace.</li>\n</ul>\n<h4>Avril - Décembre 2023: Concepteur développeur d’application</h4>\n<h5>Développement d’une application de gestion et de partage d’évènements :</h5>\n<ul>\n<li>Diagrammes UML, workflows, parcours utilisateurs</li>\n<li>Base de données MySQL et MongoDB</li>\n<li>Microservices</li>\n<li>Outils: Figma, HTML, CSS, JavaScript, TypeScript, Node.js, Next.js, React.js, Docker, Linux, NeoVim, VS Code, Intellij</li>\n</ul>\n<h4>Juillet - Décembre 2017: Animateur numérique, \"Les petits débrouillards\", Brest, France</h4>\n\n"
+        },
+        "Formations": {
+          "name": "Formations",
+          "type": "file",
+          "path": "/Home/Curriculum/Formations",
+          "executable": false,
+          "data": "<p>Concepteur développeur d’applications — Alt Rennes — 2023</p>\n<p>Licence 1 SPI (U.B.O.) — 2015/2016</p>\n<p>Formation au langage C — école 42 (Paris) - septembre 2014</p>\n<p>Bac STI2D — Lycée Dupuy De Lôme (Brest) - 2013/2014, Option architecture & construction</p>\n\n"
+        },
+        "Infos": {
+          "name": "Infos",
+          "type": "file",
+          "path": "/Home/Curriculum/Infos",
+          "executable": false,
+          "data": "<p>Edin Scieller</p>\n<p>Concepteur Développeur d’Application</p>\n<p>Téléphone: <a href=\"tel:0663436884\" target=\"_blank\">06.63.43.68.84</a></p>\n<p>Email: <a href=\"mailto:scieller.edin@gmail.com\" target=\"_blank\">scieller.edin@gmail.com</a></p>\n<p>Adresse: 1 square Professeur Rieux, 29200 Brest</p>\n<p>Date de naissance: 21 avril 1996, Brest (29)</p>\n<p>Permis B</p>\n"
+        }
+      },
+      "childrenNames": [
+        "Experiences",
+        "Formations",
+        "Infos"
+      ]
+    },
     "about": {
       "name": "about",
       "type": "file",
       "path": "/Home/about",
+      "executable": false,
       "data": "This website serves as my curriculum vitae.\nI've coded it by hand with HTML, CSS, and standard JavaScript as a fun side project.\nSource code : <a href=\"https://github.com/yuukiflow/TerminalCurriculum\">https://github.com/yuukiflow/TerminalCurriculum</a>\n\n"
-    },
-    "experiences": {
-      "name": "experiences",
-      "type": "folder",
-      "path": "/Home/experiences",
-      "children": {},
-      "childrenNames": [
-        ""
-      ]
     },
     "projects": {
       "name": "projects",
@@ -32,6 +57,7 @@
               "name": "EventManager",
               "type": "file",
               "path": "/Home/projects/Alt/EventManager",
+              "executable": false,
               "data": "I built an Api for managing events.\n"
             }
           },
@@ -43,21 +69,11 @@
       "childrenNames": [
         "Alt"
       ]
-    },
-    "studies": {
-      "name": "studies",
-      "type": "folder",
-      "path": "/Home/studies",
-      "children": {},
-      "childrenNames": [
-        ""
-      ]
     }
   },
   "childrenNames": [
+    "Curriculum",
     "about",
-    "experiences",
-    "projects",
-    "studies"
+    "projects"
   ]
 }

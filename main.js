@@ -47,6 +47,7 @@ function buildFileTree(directory, currentPath = '/Home') {
                 name: file,
                 type: 'file',
                 path: path.join(currentPath, file), // Set path for files
+                executable: isExecutable(fileStats),
                 data: fileContent // Include file content in the data field
             };
             node.childrenNames.push(file);
@@ -54,6 +55,10 @@ function buildFileTree(directory, currentPath = '/Home') {
     });
 
     return node;
+}
+function isExecutable(stats) {
+    console.log(`Checking mode for file: ${stats.mode.toString(8)}`);
+    return (stats.mode & 0o111) !== 0;
 }
 
 
