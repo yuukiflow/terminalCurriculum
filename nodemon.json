@@ -1,4 +1,5 @@
 {
     "watch": ["src"],
-    "ignore": ["src/fileTree.json"]
+    "ignore": ["src/fileTree.json"],
+    "ext": "js css html"
 }

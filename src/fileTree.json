@@ -42,38 +42,10 @@
       "path": "/Home/about",
       "executable": false,
       "data": "This website serves as my curriculum vitae.\nI've coded it by hand with HTML, CSS, and standard JavaScript as a fun side project.\nSource code : <a href=\"https://github.com/yuukiflow/TerminalCurriculum\">https://github.com/yuukiflow/TerminalCurriculum</a>\n\n"
-    },
-    "projects": {
-      "name": "projects",
-      "type": "folder",
-      "path": "/Home/projects",
-      "children": {
-        "Alt": {
-          "name": "Alt",
-          "type": "folder",
-          "path": "/Home/projects/Alt",
-          "children": {
-            "EventManager": {
-              "name": "EventManager",
-              "type": "file",
-              "path": "/Home/projects/Alt/EventManager",
-              "executable": false,
-              "data": "I built an Api for managing events.\n"
-            }
-          },
-          "childrenNames": [
-            "EventManager"
-          ]
-        }
-      },
-      "childrenNames": [
-        "Alt"
-      ]
     }
   },
   "childrenNames": [
     "Curriculum",
-    "about",
-    "projects"
+    "about"
   ]
 }

@@ -77,13 +77,27 @@ function parseCommand(commands) {
     let command = commands.split(' ')[0];
     let args = commands.split(' ').slice(1);
     console.log(commands);
+    let helpText = `<div class="cli-help">
+    <pre>
+Usage: [[<span class="command">command</span>] [<span class="command">argument</span>]]
 
+Commands:
+  <span class="command">clear</span>     Clear the terminal screen
+  <span class="command">cat</span>       Display the contents of a file
+  <span class="command">cd</span>        Change the current directory
+  <span class="command">help</span>      Show available commands and their descriptions
+  <span class="command">ls</span>        List the contents of the current directory
+  <span class="command">gui</span>       Open the GUI for additional information
+  <span class="command">exit</span>      Exit the terminal
+    </pre>
+</div>
+`
     switch (command) {
         case 'clear':
             stdout.innerHTML = '';
             break;
         case 'help':
-            writeToTerminal(commands, 'Commands: clear, cat, cd, help, ls, gui, exit');
+            writeToTerminal(commands, helpText);
             break;
         case 'exit':
             terminalWindow.style.display = 'none';
