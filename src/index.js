@@ -83,7 +83,7 @@ function parseCommand(commands) {
             stdout.innerHTML = '';
             break;
         case 'help':
-            writeToTerminal(commands, 'Commands: clear, cat, cd, help, ls, exit');
+            writeToTerminal(commands, 'Commands: clear, cat, cd, help, ls, gui, exit');
             break;
         case 'exit':
             terminalWindow.style.display = 'none';
