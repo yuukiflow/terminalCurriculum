@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 1%;
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     min-height: 100vh;
@@ -94,28 +95,62 @@ input[type="text"] {
 /* GUI container */
 .gui {
     font-family: Arial, sans-serif;
-    color: #eee;
+    color: #cdd6f4; /* Light pastel text for readability */
+    background-color: #1e1e2e; /* Dark background color */
     margin: 0 auto;
     padding: 0;
     display: none; /* Hidden by default */
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
 }
 
 .gui .container {
     width: 100%;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #45475a; /* Subtle border matching the dark theme */
+    background-color: #302d41; /* Darker container background */
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
-.gui h1, .gui h2, .gui h3, .gui ul li, .gui ul { color: #eee; }
+.gui h1 {
+    color: #f28fad; /* Catppuccin pink for h1 */
+    font-size: 2em;
+}
 
-.gui .section { margin-bottom: 20px; }
+.gui h2 {
+    color: #94e2d5; /* Catppuccin teal for h2 */
+    font-size: 1.75em;
+}
+
+.gui h3 {
+    color: #89b4fa; /* Catppuccin blue for h3 */
+    font-size: 1.5em;
+}
+
+.gui ul li, .gui ul {
+    color: #bac2de; /* Light pastel color for list items */
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.gui .section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #24273a; /* Slightly lighter dark color for sections */
+    border-left: 4px solid #f5c2e7; /* Accent border in Catppuccin pink */
+    border-radius: 6px;
+}
 
 .a, a:visited, a:link, a:hover, a:active {
     color: #00ff00;
     text-decoration: none;
 }
-
+@media (max-width: 900px) {
+    body {
+        flex-direction: column; /* Stacks items on top of each other */
+    }
+}
