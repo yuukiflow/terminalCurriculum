@@ -1,0 +1,14 @@
+<h2>Freelance Developper - Brest, France</2>
+<p>March 2024 - Present</p>
+<h3>Design and Developpement</h3>
+<ul>
+<li>
+<p>un modèle de language basé sur llama-3.</p>
+</li>
+<li>
+<p>une api permettant d'éxécuter des requettes LLM</p>
+</li>
+<li>
+<p>déploiement du modèle sur HuggingFace.</p>
+</li>
+</ul>
