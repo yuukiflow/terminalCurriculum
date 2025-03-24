@@ -1,9 +1,9 @@
 # Terminal Curriculum
 
 ## À propos
-Terminal Curriculum est un projet innovant qui présente mon curriculum vitae sous forme d'interface terminal interactive. Ce projet est actuellement en cours de développement et évoluera vers une plateforme portfolio complète.
+Terminal Curriculum est un projet innovant qui présente mon curriculum vitae sous forme d'interface terminal interactive.
 
-## Fonctionnalités actuelles
+## Fonctionnalités
 - Interface terminal interactive avec commandes Unix-like
 - Navigation dans une structure de fichiers simulée
 - Affichage du CV en mode terminal
@@ -26,15 +26,6 @@ Terminal Curriculum est un projet innovant qui présente mon curriculum vitae so
 - JavaScript (Vanilla)
 - Système de fichiers simulé en JSON
 
-## État du projet
-Ce projet est en cours de développement actif. Les prochaines fonctionnalités prévues incluent :
-- Intégration d'un portfolio complet
-- Galerie de projets interactifs
-- Système de navigation amélioré
-- Animations et transitions
-- Support multilingue
-- Mode sombre/clair
-
 ## Installation
 1. Clonez le repository
 ```bash
@@ -43,8 +34,5 @@ git clone [URL_DU_REPO]
 
 2. Ouvrez le fichier `index.html` dans votre navigateur
 
-## Contribution
-Ce projet est en cours de développement personnel. Les contributions ne sont pas ouvertes pour le moment.
-
 ## Licence
-Tous droits réservés © 2024 Edin Scieller
+Ce projet est open source. Vous êtes libre de l'utiliser et de le modifier selon vos besoins.
