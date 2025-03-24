@@ -1,8 +1,8 @@
-This website serves as my curriculum vitae.
-I've coded it by hand with HTML, CSS, and standard JavaScript as a fun side project.
-Source code : <a href="https://github.com/yuukiflow/TerminalCurriculum">https://github.com/yuukiflow/TerminalCurriculum</a>
+Ce site web sert de curriculum vitae.
+Je l'ai codé manuellement avec HTML, CSS et JavaScript standard comme projet personnel du week-end.
+Code source : <a href="https://github.com/yuukiflow/TerminalCurriculum">https://github.com/yuukiflow/TerminalCurriculum</a>
 
-<h2>Contact Information</h2>
+<h2>Informations de contact</h2>
 <ul>
     <li>Concepteur Développeur d'Application</li>
     <li>Téléphone: 06.63.43.68.84</li>
@@ -12,7 +12,7 @@ Source code : <a href="https://github.com/yuukiflow/TerminalCurriculum">https://
     <li>Permis B</li>
 </ul>
 
-<h2>Languages</h2>
+<h2>Langues</h2>
 <ul>
     <li>Anglais (courant)</li>
 </ul>
