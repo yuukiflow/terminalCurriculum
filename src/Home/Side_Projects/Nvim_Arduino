@@ -1,0 +1,36 @@
+<h2>Arduino-Nvim</h2>
+<p>2024 - En cours</p>
+<h3>Description :</h3>
+<p>Plugin Neovim transformant l'éditeur en environnement de développement Arduino complet. Intègre les fonctionnalités de l'IDE Arduino directement dans Neovim pour une expérience de développement optimisée.</p>
+
+<h3>Fonctionnalités principales :</h3>
+<ul>
+    <li>Compilation et vérification de sketches Arduino</li>
+    <li>Téléversement direct vers les cartes Arduino</li>
+    <li>Moniteur série interactif avec capacités d'écriture</li>
+    <li>Gestion des cartes et ports via interface graphique</li>
+    <li>Gestion avancée des bibliothèques avec intégration Telescope</li>
+    <li>Support LSP pour le développement Arduino</li>
+    <li>Surveillance en temps réel</li>
+    <li>Stockage persistant des configurations</li>
+</ul>
+
+<h3>Technologies utilisées :</h3>
+<ul>
+    <li>arduino-cli</li>
+    <li>arduino-language-server</li>
+    <li>clangd</li>
+    <li>telescope.nvim</li>
+    <li>nvim-lspconfig</li>
+</ul>
+
+<h3>Acquis :</h3>
+<ul>
+    <li>Développement de plugins Neovim</li>
+    <li>Intégration d'outils externes</li>
+    <li>Implémentation de systèmes de commandes</li>
+    <li>Gestion de la chaîne d'outils Arduino</li>
+    <li>Communication série</li>
+    <li>Gestion des bibliothèques</li>
+    <li>Intégration LSP</li>
+</ul>
