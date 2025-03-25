@@ -55,7 +55,7 @@ body {
 }
 
 .terminal-output {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .line {
@@ -103,12 +103,34 @@ input[type="text"] {
     background-color: #1e1e2e; /* Dark background color */
     margin: 0 auto;
     padding: 0;
-    display: none; /* Hidden by default */
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+}
+
+/* Hide GUI only when it's a sibling of the terminal window */
+.terminal-window + .gui {
+    display: none;
+}
+
+/* Standalone GUI page */
+body:not(.terminal-window) {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+body:not(.terminal-window) .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .gui .container {

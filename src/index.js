@@ -89,6 +89,7 @@ function handleInputKeydown(event) {
                 DOM.gui.style.display = 'none';
                 DOM.stdin.style.opacity = '1';
                 DOM.terminalPath.style.display = 'block';
+                DOM.prompt.style.display = 'block';
             }
             break;
     }
@@ -100,6 +101,9 @@ function parseCommand(commands) {
     
     try {
         switch (command) {
+            case "":
+                writeToTerminal(" ", " ");
+                break;
             case 'clear':
                 DOM.stdout.innerHTML = '';
                 break;
@@ -124,10 +128,16 @@ function parseCommand(commands) {
                 }
                 break;
             case 'gui':
-                writeToTerminal(commands, "Executing " + command + "..." + "press CTRL+C to stop.");
-                DOM.stdin.style.opacity = '0';
-                DOM.terminalPath.style.display = 'none';
-                DOM.gui.style.display = 'block';
+                if (window.innerWidth <= 900) {
+                    writeToTerminal(commands, "Screen too small for GUI. Opening in new window...");
+                    window.open('gui.html', '_blank');
+                } else {
+                    writeToTerminal(commands, "Executing " + command + "..." + "press CTRL+C to stop.");
+                    DOM.stdin.style.opacity = '0';
+                    DOM.prompt.style.display = 'none';
+                    DOM.terminalPath.style.display = 'none';
+                    DOM.gui.style.display = 'block';
+                }
                 break;
             default:
                 writeToTerminal(commands, `Command not found: ${command}`);
