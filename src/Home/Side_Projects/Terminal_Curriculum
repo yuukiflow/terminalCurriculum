@@ -1,0 +1,43 @@
+<h2>Terminal Curriculum</h2>
+<p>2024 - En cours</p>
+<h3>Description :</h3>
+<p>Un projet innovant qui présente mon curriculum vitae sous forme d'interface terminal interactive. Le projet combine une expérience utilisateur de terminal Unix avec une interface graphique moderne, offrant une façon unique et engageante de découvrir mon profil professionnel.</p>
+
+<h3>Fonctionnalités principales :</h3>
+<ul>
+    <li>Interface terminal interactive avec commandes Unix-like (ls, cd, cat, etc.)</li>
+    <li>Navigation dans une structure de fichiers simulée</li>
+    <li>Affichage du CV en mode terminal</li>
+    <li>Interface graphique accessible via la commande `gui`</li>
+    <li>Système de complétion par tabulation</li>
+    <li>Historique des commandes</li>
+    <li>Adaptation responsive avec ouverture en nouvelle fenêtre sur petits écrans</li>
+</ul>
+
+<h3>Technologies utilisées :</h3>
+<ul>
+    <li>HTML5</li>
+    <li>CSS3 (Flexbox, Media Queries)</li>
+    <li>JavaScript (Vanilla)</li>
+    <li>Système de fichiers simulé en JSON</li>
+</ul>
+
+<h3>Acquis :</h3>
+<ul>
+    <li>Développement d'une interface utilisateur interactive</li>
+    <li>Implémentation d'un système de commandes personnalisé</li>
+    <li>Gestion d'une structure de fichiers simulée</li>
+    <li>Intégration de complétion par tabulation</li>
+    <li>Design responsive et adaptatif</li>
+    <li>Optimisation des performances avec chargement asynchrone</li>
+    <li>Gestion des états et de l'historique des commandes</li>
+</ul>
+
+<h3>Points forts :</h3>
+<ul>
+    <li>Interface utilisateur intuitive et familière pour les développeurs</li>
+    <li>Expérience utilisateur immersive et interactive</li>
+    <li>Design moderne et responsive</li>
+    <li>Performance optimisée avec chargement asynchrone des données</li>
+    <li>Code maintenable et bien structuré</li>
+</ul> 
