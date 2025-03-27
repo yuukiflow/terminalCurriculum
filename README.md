@@ -29,7 +29,7 @@ Terminal Curriculum est un projet innovant qui présente mon curriculum vitae so
 ## Installation
 1. Clonez le repository
 ```bash
-git clone [URL_DU_REPO]
+git clone https://github.com/yuukiflow/terminalCurriculum.git
 ```
 
 2. Ouvrez le fichier `index.html` dans votre navigateur
