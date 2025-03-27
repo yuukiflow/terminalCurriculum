@@ -3,7 +3,7 @@
 <h3>Description :</h3>
 <p>Plugin Neovim transformant l'éditeur en environnement de développement Arduino complet. Intègre les fonctionnalités de l'IDE Arduino directement dans Neovim pour une expérience de développement optimisée.</p>
 
-<a href="https://github.com/yuukiflow/Arduino-Nvim">Arduino-Nvim</a>
+<a href="https://github.com/yuukiflow/Arduino-Nvim" target="_blank">Arduino-Nvim</a>
 
 <h3>Fonctionnalités principales :</h3>
 <ul>
