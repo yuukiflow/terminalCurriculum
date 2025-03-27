@@ -1,8 +1,0 @@
-<h2>Développeur Freelance</h2>
-<p>Mars 2024 - Présent</p>
-<h3>Conception et développement :</h3>
-<ul>
-    <li>Un modèle de langage basé sur llama-3.</li>
-    <li>Une API permettant d'exécuter des requêtes LLM.</li>
-    <li>Déploiement du modèle sur HuggingFace.</li>
-</ul> 
