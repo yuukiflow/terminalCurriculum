@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #222;
-    color: #fff;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
     margin: 0;
     padding: 1%;
     display: flex;
@@ -17,10 +17,10 @@ body {
     width: 100%;
     min-width: 300px;
     margin: 0;
-    border: 2px solid #000;
+    border: 2px solid #313244;
     border-radius: 10px;
     overflow: hidden;
-    background-color: hsla(0, 0%, 100%, 0.15);
+    background-color: #313244;
     max-height: 95vh;
     min-height: 200px;
     display: flex;
@@ -28,7 +28,7 @@ body {
 }
 
 .terminal-header {
-    background-color: #0f0f0f;
+    background-color: #1e1e2e;
     height: 30px;
     display: flex;
     align-items: center;
@@ -37,14 +37,15 @@ body {
 }
 
 /* Status buttons */
-.terminal-header .close-btn { background-color: #ff3b47; }
-.terminal-header .minimize-btn { background-color: #ffc106; }
-.terminal-header .maximize-btn { background-color: #00e676; }
+.terminal-header .close-btn { background-color: #f38ba8; }
+.terminal-header .minimize-btn { background-color: #fab387; }
+.terminal-header .maximize-btn { background-color: #a6e3a1; }
 
-.green, .prompt { color: #00ff00; }
-.folder { color: #d3a5fd; }
-.executable { color: #8ab6ff; }
-.file { color: #f28fad; }
+.green, .prompt { color: #a6e3a1; }
+.folder { color: #f5c2e7; }
+.executable { color: #89b4fa; }
+.file { color: #f38ba8; }
+
 /* Terminal content */
 .terminal-body {
     padding: 10px;
@@ -55,12 +56,13 @@ body {
 }
 
 .terminal-output {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .line {
     margin: 0 0;
 }
+
 .terminal-input {
     display: flex;
     align-items: center;
@@ -72,7 +74,7 @@ input[type="text"] {
     flex: 1;
     background-color: transparent;
     border: none;
-    color: #fff;
+    color: #cdd6f4;
     outline: none;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
@@ -81,33 +83,34 @@ input[type="text"] {
 /* CLI Help styling */
 .cli-help {
     font-family: 'Courier New', Courier, monospace;
-    color: #fff;
+    color: #cdd6f4;
     width: 100%;
 }
 
 .cli-help pre {
     margin: 0;
-    padding: 10px; /* Adds padding for readability */
+    padding: 10px;
     line-height: 1.5;
 }
 
 .cli-help .command {
     font-weight: bold;
-    color: #8ab6ff;
+    color: #89b4fa;
 }
 
 /* GUI container */
 .gui {
     font-family: Arial, sans-serif;
-    color: #cdd6f4; /* Light pastel text for readability */
-    background-color: #1e1e2e; /* Dark background color */
+    color: #cdd6f4;
+    background-color: #1e1e2e;
     margin: 0 auto;
     padding: 0;
+    display: none;
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Hide GUI only when it's a sibling of the terminal window */
@@ -136,29 +139,29 @@ body:not(.terminal-window) .container {
 .gui .container {
     width: 100%;
     padding: 20px;
-    border: 1px solid #45475a; /* Subtle border matching the dark theme */
-    background-color: #302d41; /* Darker container background */
+    border: 1px solid #45475a;
+    background-color: #313244;
     border-radius: 8px;
     box-sizing: border-box;
 }
 
 .gui h1 {
-    color: #f28fad; /* Catppuccin pink for h1 */
+    color: #f5c2e7;
     font-size: 2em;
 }
 
 .gui h2 {
-    color: #94e2d5; /* Catppuccin teal for h2 */
+    color: #89b4fa;
     font-size: 1.75em;
 }
 
 .gui h3 {
-    color: #89b4fa; /* Catppuccin blue for h3 */
+    color: #89b4fa;
     font-size: 1.5em;
 }
 
 .gui ul li, .gui ul {
-    color: #bac2de; /* Light pastel color for list items */
+    color: #cdd6f4;
     font-size: 1em;
     line-height: 1.6;
 }
@@ -166,17 +169,18 @@ body:not(.terminal-window) .container {
 .gui .section {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #24273a; /* Slightly lighter dark color for sections */
-    border-left: 4px solid #f5c2e7; /* Accent border in Catppuccin pink */
+    background-color: #313244;
+    border-left: 4px solid #f5c2e7;
     border-radius: 6px;
 }
 
 .a, a:visited, a:link, a:hover, a:active {
-    color: #00ff00;
+    color: #a6e3a1;
     text-decoration: none;
 }
+
 @media (max-width: 900px) {
     body {
-        flex-direction: column; /* Stacks items on top of each other */
+        flex-direction: column;
     }
 }
